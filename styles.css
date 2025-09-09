@@ -1,4 +1,3 @@
-/* reset basics */
 html,
 body {
   height: 100%;
@@ -12,27 +11,25 @@ body {
   font-size: 2rem;
 }
 
-/* This is the scrollable element (recommended) */
 .scroll-container {
   scrollbar-width: 0;
   overflow-x: hidden;
-  height: 100vh; /* container fills viewport */
-  overflow-y: auto; /* make it scrollable */
-  scroll-snap-type: y mandatory; /* enable vertical snapping */
-  scroll-behavior: smooth; /* smooth snap animation */
-  -webkit-overflow-scrolling: touch; /* smooth native scrolling on iOS */
-  touch-action: pan-y; /* allow vertical touch swipes */
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
 }
 .scroll-cnotainer::-webkit-scrollbar {
   display: none;
 }
 
-/* Each section must be a direct child of .scroll-container */
 .section {
-  height: 100vh; /* full viewport so it snaps to top */
+  height: 100vh;
   width: 100vw;
-  scroll-snap-align: start; /* align top of section with viewport top */
-  scroll-snap-stop: always; /* do not skip this snap (helps on fast scroll) */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,6 +45,9 @@ body {
 }
 .sec-3 {
   background: linear-gradient(180deg, #3b4a00, #759500);
+}
+.sec-4 {
+  background: linear-gradient(180deg, #759500, #98c200);
 }
 
 .small {
@@ -66,9 +66,8 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
-  touch-action: manipulation; /* mobile responsiveness */
+  touch-action: manipulation;
 
-  /* prevent text highlight on double tap */
   -webkit-tap-highlight-color: transparent;
   user-select: none;
 }
@@ -78,8 +77,8 @@ body {
 }
 
 .button:active {
-  transform: scale(0.95); /* subtle shrink animation */
+  transform: scale(0.95);
   background: white;
   color: black;
-  box-shadow: 0 0 10px white; /* quick flash effect */
+  box-shadow: 0 0 10px white;
 }
