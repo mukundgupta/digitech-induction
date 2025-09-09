@@ -1,0 +1,49 @@
+/* reset basics */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  background: black;
+  color: white;
+  font-size: 2rem;
+}
+
+/* This is the scrollable element (recommended) */
+.scroll-container {
+  height: 100vh; /* container fills viewport */
+  overflow-y: auto; /* make it scrollable */
+  scroll-snap-type: y mandatory; /* enable vertical snapping */
+  scroll-behavior: smooth; /* smooth snap animation */
+  -webkit-overflow-scrolling: touch; /* smooth native scrolling on iOS */
+  touch-action: pan-y; /* allow vertical touch swipes */
+}
+
+/* Each section must be a direct child of .scroll-container */
+.section {
+  height: 100vh; /* full viewport so it snaps to top */
+  width: 100vw;
+  scroll-snap-align: start; /* align top of section with viewport top */
+  scroll-snap-stop: always; /* do not skip this snap (helps on fast scroll) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+.sec-1 {
+  background: linear-gradient(180deg, #000, #151a00);
+}
+.sec-2 {
+  background: linear-gradient(180deg, #151a00, #3b4a00);
+}
+
+.small {
+  padding-top: 20%;
+  font-size: 1.4rem;
+  text-align: center;
+}
