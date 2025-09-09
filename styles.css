@@ -14,12 +14,17 @@ body {
 
 /* This is the scrollable element (recommended) */
 .scroll-container {
+  scrollbar-width: 0;
+  overflow-x: hidden;
   height: 100vh; /* container fills viewport */
   overflow-y: auto; /* make it scrollable */
   scroll-snap-type: y mandatory; /* enable vertical snapping */
   scroll-behavior: smooth; /* smooth snap animation */
   -webkit-overflow-scrolling: touch; /* smooth native scrolling on iOS */
   touch-action: pan-y; /* allow vertical touch swipes */
+}
+.scroll-cnotainer::-webkit-scrollbar {
+  display: none;
 }
 
 /* Each section must be a direct child of .scroll-container */
@@ -46,7 +51,7 @@ body {
 }
 
 .small {
-  padding-top: 20%;
+  padding-top: 5%;
   font-size: 1.4rem;
   text-align: center;
 }
